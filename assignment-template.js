@@ -1,12 +1,23 @@
 /*
 ============================================
-; Title: Assignment
+; Title: Assignment 1.3
 ; Author: Kimberly Pierce
-; Date:
+; Date: 19 February 2020
 ; Modified By: Kimberly Pierce
-; Description:
+; Description: Modules
 ;===========================================
 */
 
-const header = require('../pierce-header.js'); //import statement for header file
-console.log(header.display("Kimberly", "Pierce", "Assignment ") + " \n ");
+function Dog (breed, color, size, gender){
+    this.breed = breed,
+    this.color = color,
+    this.size = size,
+    this.gender = gender,
+    this.details = function(){
+        return this.breed + this.color + this.size + this.gender
+    };
+};
+
+var Swidgen = ('Boxer Mix', 'Fawn & White', 'Large', 'Female');
+
+console.log(Swidgen);
