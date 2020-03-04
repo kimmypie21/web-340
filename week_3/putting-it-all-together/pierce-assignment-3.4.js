@@ -18,6 +18,7 @@ var path = require ("path");
 var logger = require("morgan");
 var app = express();
 
+
 //tell express to use ejs views and where to find them
 app.set("views", path.resolve(__dirname, "views"));
 app.set("view engine", "ejs");
