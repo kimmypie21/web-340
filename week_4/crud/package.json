@@ -1,0 +1,8 @@
+{
+  "name": "curl",
+  "author": "Kimberly Pierce",
+  "private": true,
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
