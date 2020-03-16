@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Assignment 5.2</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+
+  <body>
+
+    <nav class="nav justify-content-center">
+      <a class="nav-link active" href="#">Home</a>
+      <a class="nav-link" href="#">About</a>
+      <a class="nav-link disabled" href="#">Contact</a>
+    </nav>
+
+    <div role="main" class="container">
+      <br>
+
+      <h2>Pets</h2>
+
+      <% if (dogs.length > 0){ %>
+        <% for (var k=0; k < dogs.length; k++) { %>
+          <div class="alert alert-success" role="alert">
+            <strong> <%= dogs[k] %> </strong>
+          </div>
+          <% } %>
+      <% } %>
+
+
+      <!--end if-->
+
+    </div>
+
+
+
+
+
+
+  </body>
+
+
+</html>

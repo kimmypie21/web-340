@@ -1,0 +1,9 @@
+{
+  "name": "EJS Templates",
+  "author": "Kimberly Pierce",
+  "private": true,
+  "dependencies": {
+    "ejs": "^3.0.1",
+    "express": "^4.17.1"
+  }
+}
