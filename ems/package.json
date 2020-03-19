@@ -1,0 +1,12 @@
+{
+  "name": "ems",
+  "author": "Kimberly Pierce",
+  "private": true,
+  "dependencies": {
+    "body": "^5.1.0",
+    "ejs": "^3.0.1",
+    "express": "^4.17.1",
+    "morgan": "^1.9.1",
+    "parser": "^0.1.4"
+  }
+}
