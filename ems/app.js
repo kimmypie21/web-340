@@ -19,6 +19,7 @@ var logger = require ("morgan");
 var app = express();
 
 app.set("views", path.resolve(__dirname, "views"));
+app.set("styles", path.resolve(__dirname, "styles"));
 app.set("view engine", "ejs");
 app.use(logger("short"));
 
@@ -27,6 +28,14 @@ app.get("/", function(request, response){
     title: "Home Page"
   });
 });
+
+app.get("/list", function(request, response){
+  response.render("list", {
+    title: "Employee List"
+  });
+});
+
+
 
 http.createServer(app).listen(8080, function(){
   console.log("Application is started on port 8080");
