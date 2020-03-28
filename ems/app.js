@@ -19,20 +19,16 @@ var logger = require ("morgan");
 var app = express();
 
 app.set("views", path.resolve(__dirname, "views"));
-app.set("styles", path.resolve(__dirname, "styles"));
 app.set("view engine", "ejs");
 app.use(logger("short"));
+app.use(express.static (path.join(__dirname, "public")));
 
 app.get("/", function(request, response){
-  response.render("index", {
-    title: "Home Page"
-  });
+  response.render("index");
 });
 
 app.get("/list", function(request, response){
-  response.render("list", {
-    title: "Employee List"
-  });
+  response.render("list");
 });
 
 

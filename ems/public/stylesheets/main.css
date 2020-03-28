@@ -1,0 +1,15 @@
+footer{
+  text-align: center;
+}
+.navbar{
+  background-color: rgba(30,87,153, .70) ;
+}
+.jumbotron
+{
+  background-image:url("../images/view.jpg");
+  background-position: center;
+  background-size: cover;
+  height: 1000px;
+  background-color: rgba(30,87,153, .70) ;
+}
+
