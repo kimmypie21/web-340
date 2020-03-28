@@ -13,3 +13,8 @@ footer{
   background-color: rgba(30,87,153, .70) ;
 }
 
+#employeeTable{
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 5%;
+}

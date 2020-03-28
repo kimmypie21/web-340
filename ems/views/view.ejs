@@ -17,7 +17,19 @@ Description: EMS
 
 <%- include ("navbar") %>
 
+<div role="main" class="container" style="width: 50%;">
+  <br>
+  <h2>Employee Details</h2>
+  <br>
+  <div class="form-group">
+    <label for="employeeName">Name: </label>
+    <input type="text" name="empolyeeName" id="employeeName" class="form-control" aria-describedby="helpId" readonly value="<%= employee[0].name %>">
+    <small id="helpId" class="text-muted">Help text</small>
+  </div>
 
+
+
+</div>
 
 <%- include ("footer") %>
 
