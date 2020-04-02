@@ -1,15 +1,22 @@
 footer{
   text-align: center;
 }
-.navbar{
+#navbar{
   background-color: rgba(30,87,153, .70) ;
 }
+
+#search{
+  color: white;
+}
+
+
 .jumbotron
 {
   background-image:url("../images/view.jpg");
+  opacity: 0.85;
   background-position: center;
   background-size: cover;
-  height: 1000px;
+  height: 700px;
   background-color: rgba(30,87,153, .70) ;
 }
 
@@ -17,4 +24,15 @@ footer{
   width: 80%;
   margin: 0 auto;
   margin-top: 5%;
+}
+
+#log_in{
+  width: 20%;
+  background-color: rgba(255, 255, 255, .50);
+  padding: 2%;
+}
+
+.form-control-sm
+{
+
 }
