@@ -8,7 +8,7 @@
 ;===========================================
 */
 
-const header = require('../pierce-header.js'); //import statement for header file
+const header = require('../../../pierce-header.js'); //import statement for header file
 console.log(header.display("Kimberly", "Pierce", "Assignment 7.3") + " \n ");
 
 function fruits(str){
