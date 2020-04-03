@@ -13,15 +13,17 @@ console.log(header.display("Kimberly", "Pierce", "Assignment 7.2") + " \n ");
 
 var assert = require("assert");
 
+//test code
 describe("String#split", function(){
   it("should return an array of fruits", function (){
     assert(Array.isArray("Apple, Orange, Mango".split(",")));
   });
 });
 
+//function to test
 function getFruits(str){
   return str.split(",");
 };
 
-
+//export for other files to use
 module.exports= getFruits;

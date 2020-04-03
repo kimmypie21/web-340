@@ -11,8 +11,10 @@
 const header = require('../../../pierce-header.js'); //import statement for header file
 console.log(header.display("Kimberly", "Pierce", "Assignment 7.3") + " \n ");
 
+//fruits function
 function fruits(str){
   return str.split(",");
 };
 
+//export to make it available to other files
 module.exports = fruits;
