@@ -1,6 +1,16 @@
+body{
+  font-family: 'Open Sans Condensed', sans-serif;
+
+}
+
 footer{
   text-align: center;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
 }
+
 #navbar{
   background-color: rgba(30,87,153, .70) ;
 }
@@ -9,15 +19,11 @@ footer{
   color: white;
 }
 
-
 .jumbotron
 {
   background-image:url("../images/view.jpg");
-  opacity: 0.85;
   background-position: center;
   background-size: cover;
-  height: 700px;
-  background-color: rgba(30,87,153, .70) ;
 }
 
 #employeeTable{
@@ -32,7 +38,10 @@ footer{
   padding: 2%;
 }
 
-.form-control-sm
-{
+.card{
+  opacity: .90;
+}
 
+#container{
+  background-color: rgba(30,87,153, .70) ;
 }
