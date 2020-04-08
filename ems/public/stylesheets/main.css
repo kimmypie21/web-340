@@ -1,13 +1,11 @@
 body{
   font-family: 'Open Sans Condensed', sans-serif;
-
+  background-color:rgba(117, 165, 229, .80);
 }
 
 footer{
   text-align: center;
-  position: fixed;
-  left: 0;
-  bottom: 0;
+
   width: 100%;
 }
 
@@ -42,6 +40,4 @@ footer{
   opacity: .90;
 }
 
-#container{
-  background-color: rgba(30,87,153, .70) ;
-}
+

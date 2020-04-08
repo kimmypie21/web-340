@@ -18,6 +18,7 @@ var http = require ("http");
 var path = require ("path");
 var logger = require ("morgan");
 var mongoose = require ("mongoose");
+var helmet = require ("helmet");
 
 //connect to mongoDB
 var mongoDB = "mongodb+srv://new_user:54n2T7UShxq@buwebdev-cluster-1-brhxo.mongodb.net/ems";
@@ -39,11 +40,14 @@ app.set("views", path.resolve(__dirname, "views"));
 app.set("view engine", "ejs");
 app.use(logger("short"));
 app.use(express.static (path.join(__dirname, "public")));
+app.use(helmet.xssFilter());
 
 
 //get index page
 app.get("/", function(request, response){
-  response.render("index");
+  response.render("index", {
+    message: "XSS Prevention Example"
+  });
 });
 
 //get employee list page
