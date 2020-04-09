@@ -72,13 +72,19 @@ app.use(bodyParser.urlencoded({
 //get index page
 app.get("/", function(request, response){
   response.render("index", {
-    message: "XSS Prevention Example"
+    message: "Home Page"
   });
 });
 
 //get employee list page
 app.get("/list", function(request, response){
   response.render("list");
+});
+//get new page
+app.get("/new", function(request,response){
+  response.render("new", {
+    message: "XSS Prevention Example"
+  });
 });
 
 //

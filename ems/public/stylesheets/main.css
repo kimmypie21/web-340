@@ -41,7 +41,8 @@ footer{
 }
 
 #csrf{
-  width: 30%;
+  width: 80%;
+  margin: 0 auto;
   background-color: rgba(255, 255, 255, .70);
   padding: 5%;
   margin-top: 8%;
@@ -50,5 +51,4 @@ footer{
 
 #csrf h2{
   font-size:1em;
-
 }
