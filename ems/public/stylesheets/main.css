@@ -40,4 +40,15 @@ footer{
   opacity: .90;
 }
 
+#csrf{
+  width: 30%;
+  background-color: rgba(255, 255, 255, .70);
+  padding: 5%;
+  margin-top: 8%;
+  border-radius: 5px;
+}
 
+#csrf h2{
+  font-size:1em;
+
+}
