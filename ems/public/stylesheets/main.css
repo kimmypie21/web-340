@@ -5,7 +5,7 @@ body{
 
 footer{
   text-align: center;
-
+  color: rgba(255, 255, 255, .70);
   width: 100%;
 }
 
@@ -39,6 +39,14 @@ footer{
   background-position: center;
   background-size: cover;
 }
+
+#new{
+  background-image: url("../images/gsmnp.jpg");
+  background-position: center;
+  background-size: cover;
+
+}
+
 #log_in{
   width: 20%;
   background-color: rgba(255, 255, 255, .50);
