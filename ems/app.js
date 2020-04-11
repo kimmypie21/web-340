@@ -22,9 +22,11 @@ var cookieParser = require("cookie-parser");
 var csrf = require ("csurf");
 var mongoose = require ("mongoose");
 var helmet = require ("helmet");
-
-
-
+var Employee = require ("./models/employee");
+//csrf protections
+var csrfProtection = csrf({cookie:true});
+//start express
+var app = express();
 //connect to mongoDB
 var mongoDB = "mongodb+srv://new_user:54n2T7UShxq@buwebdev-cluster-1-brhxo.mongodb.net/ems";
 mongoose.connect(mongoDB, {
@@ -37,49 +39,65 @@ db.once("open", function (){
   console.log("Application connected to mLab MongoDB instance");
 });
 
-//csrf protections
-var csrfProtection = csrf({cookie:true});
-
-//start express
-var app = express();
-
+//SETS
 //use ejs views
 app.set("views", path.resolve(__dirname, "views"));
 app.set("view engine", "ejs");
 
+//USES
 //use morgan
 app.use(logger("short"));
-
 //use public directories for styles and images
 app.use(express.static (path.join(__dirname, "public")));
-
 //use helmet
 app.use(helmet.xssFilter());
-
 //use csrf, cookie and body parser
-app.use(cookieParser());
-app.use(csrfProtection);
-app.use(function(request, response,next){
-  var token=request.csrfToken();
-  response.cookie("XSRF-TOKEN", token);
-  response.locals.csrfToken=token;
-  next();
-});
 app.use(bodyParser.urlencoded({
   extended: true
 }));
+app.use(cookieParser());
+app.use(csrf({cookie:true}));
+app.use(csrfProtection);
+app.use(function(req, res,next){
+  var token=req.csrfToken();
+  res.cookie("XSRF-TOKEN", token);
+  res.locals.csrfToken=token;
+  next();
+});
 
+
+//GETS
 //get index page
-app.get("/", function(request, response){
-  response.render("index", {
-    message: "Home Page"
+app.get("/", function(req, res){
+  Employee.find({}, function (err, employees){
+    if (err){
+      console.log(err);
+      throw err;
+    }else{
+      console.log(employees);
+      res.render("index", {
+        title: "EMS | Home",
+        employees: employees
+      })
+    }
   });
 });
 
-//get employee list page
-app.get("/list", function(request, response){
-  response.render("list");
+app.get("/list", function(req, res){
+  Employee.find({}, function (err, employees){
+    if (err){
+      console.log(err);
+      throw err;
+    }else{
+      console.log(employees);
+      res.render("list", {
+        title: "EMS | Home",
+        employees: employees
+      })
+    }
+  });
 });
+
 //get new page
 app.get("/new", function(request,response){
   response.render("new", {
@@ -87,10 +105,34 @@ app.get("/new", function(request,response){
   });
 });
 
-//
-app.post("/process", function(request,response){
-  console.log(request.body.txtName);
-  response.redirect("/");
+//get employee list page
+app.get("/list", function(request, response){
+  response.render("list",{
+    message: "Employee List"
+  });
+});
+
+//POSTS
+app.post("/process", function(req,res){
+  //console.log(request.body.txtName);
+  if (!req.body.txtName){
+    res.status(400).send("Entries must have a  name");
+    return;
+  }
+  var employeeName = req.body.txtName;
+    console.log(employeeName);
+  var employee = new Employee ({
+    name: employeeName
+  });
+  employee.save(function(error){
+    if(error){
+      console.log(error);
+      throw error;
+    }else{
+    console.log(employeeName + "Saved Successfully!");
+    res.redirect("/list");
+    }
+  });
 });
 
 

@@ -28,8 +28,17 @@ footer{
   width: 80%;
   margin: 0 auto;
   margin-top: 5%;
+  margin-bottom: 5%;
+  background-color: rgba(255, 255, 255, .70);
+  padding: 8%;
+  border-radius: 5px;
 }
 
+#list{
+  background-image: url("../images/cades_cove.jpg");
+  background-position: center;
+  background-size: cover;
+}
 #log_in{
   width: 20%;
   background-color: rgba(255, 255, 255, .50);
@@ -46,6 +55,7 @@ footer{
   background-color: rgba(255, 255, 255, .70);
   padding: 5%;
   margin-top: 8%;
+  margin-bottom: 8%;
   border-radius: 5px;
 }
 

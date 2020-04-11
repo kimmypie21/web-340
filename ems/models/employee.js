@@ -16,8 +16,7 @@ var mongoose = require ("mongoose");
 
 //define employee schema
 var employeeSchema =  mongoose.Schema ({
-  firstName:{type: String, required:true},
-  lastName: {type: String, required: true }
+  name:{type: String, required:true},
 });
 
 //map schema to employee model
