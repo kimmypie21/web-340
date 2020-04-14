@@ -33,6 +33,7 @@ Description: EMS
       <% employees.forEach(function(entry){%>
       <tr>
         <td scope="row"><%= entry.name %></td>
+        <td><a href="/view/<%= entry.name %>">View</a></td>
       </tr>
     </tbody>
     <%})%>

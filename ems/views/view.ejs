@@ -13,21 +13,21 @@ Description: EMS
 
 <%- include ("header") %>
 
-<body>
+<body id="view">
 
 <%- include ("navbar") %>
 
-<div role="main" class="container" style="width: 50%;">
+<div role="main" class="container" >
   <br>
-  <h2>Employee Details</h2>
-  <br>
-  <div class="form-group">
+
+  <div class="form-group" id="viewlist">
+    <h2>Employee Details</h2>
+    <br>
     <label for="employeeName">Name: </label>
-    <input type="text" name="empolyeeName" id="employeeName" class="form-control" aria-describedby="helpId" readonly value="<%= employee[0].name %>">
-    <small id="helpId" class="text-muted">Help text</small>
+    <input type="text" name="employeeName" id="employeeName" class="form-control"  value="<%= employee[0].name %>">
+    <br>
+    <a href="/list">Return to Employee List</a>
   </div>
-
-
 
 </div>
 

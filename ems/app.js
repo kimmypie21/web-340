@@ -112,6 +112,27 @@ app.get("/list", function(request, response){
   });
 });
 
+//update view
+app.get("/view/:queryName", function(request,response){
+  var queryName = request.params.queryName;
+  Employee.find({"name": queryName},
+  function(error, employees){
+    if (error) throw error;
+    console.log(employees);
+    if (employees.length>0){
+      response.render("view", {
+        title: "Employee Record",
+        employee: employees
+      })
+    } else {
+      response. redirect ("/list")
+    }
+  });
+});
+
+
+
+
 //POSTS
 app.post("/process", function(req,res){
   //console.log(request.body.txtName);

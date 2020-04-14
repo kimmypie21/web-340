@@ -7,6 +7,9 @@ footer{
   text-align: center;
   color: rgba(255, 255, 255, .70);
   width: 100%;
+
+  margin-top: 3%;
+
 }
 
 #navbar{
@@ -41,10 +44,10 @@ footer{
 }
 
 #new{
-  background-image: url("../images/gsmnp.jpg");
+  background-image: url("../images/cades-cove.jpg");
   background-position: center;
   background-size: cover;
-
+  background-repeat: no-repeat;
 }
 
 #log_in{
@@ -63,10 +66,22 @@ footer{
   background-color: rgba(255, 255, 255, .70);
   padding: 5%;
   margin-top: 8%;
-  margin-bottom: 8%;
+  margin-bottom: 30%;
   border-radius: 5px;
 }
 
 #csrf h2{
   font-size:1em;
 }
+
+#viewlist{
+  width: 100%;
+  margin: 0 auto;
+  background-color: rgba(255, 255, 255, .70);
+  padding: 5%;
+  margin-top: 8%;
+  margin-bottom: 30%;
+  border-radius: 5px;
+}
+
+
