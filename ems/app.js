@@ -43,6 +43,7 @@ db.once("open", function (){
 //use ejs views
 app.set("views", path.resolve(__dirname, "views"));
 app.set("view engine", "ejs");
+app.set ("port", process.env.PORT || 8080);
 
 //USES
 //use morgan
@@ -131,8 +132,6 @@ app.get("/view/:queryName", function(request,response){
 });
 
 
-
-
 //POSTS
 app.post("/process", function(req,res){
   //console.log(request.body.txtName);
@@ -163,6 +162,6 @@ app.post("/process", function(req,res){
 
 
 //start server
-http.createServer(app).listen(8080, function(){
-  console.log("Application is started on port 8080");
+http.createServer(app).listen(app.get("port"), function(){
+  console.log("Application is started on port" + app.get("port"))
 });
